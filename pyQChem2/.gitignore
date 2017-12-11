@@ -1,0 +1,14 @@
+*.pyc
+*.swp
+.ipynb_checkpoints
+pyQchem\ test.ipynb
+*.html
+*.png
+*.in
+*.out
+*.sh
+pathtable
+..*
+*.qcin.*
+*.ipynb
+*.inp
