@@ -52,7 +52,7 @@ def multilayer_perceptron(x, nn_info, drop_out):
     dimension_Target = nn_info[np.size(nn_info)-1]
 
     if np.size(nn_info) == 3:
-        layers_info = [nn_info[0]]
+        layers_info = [nn_info[1]]
     else:
         layers_info = nn_info[1:np.size(nn_info)-1]
     
@@ -71,11 +71,9 @@ def multilayer_perceptron(x, nn_info, drop_out):
             layer = tf.add(tf.matmul(layer, weights), bias)
             layer = tf.nn.elu(layer)
 
-#            if drop_out:
-#                if i < lenght_layers - 1:
-#                    layer = tf.nn.dropout(layer, 0.9)
-#                    print('From: '  + str(layers_info[i]))
-#                    print('To: ' + str(layers_info[i+1]))
+            if drop_out:
+                if i < lenght_layers - 1:
+                    layer = tf.nn.dropout(layer, 0.9)
 
     # Output layer with linear activation
     weights_out = weight_variable([layers_info[lenght_layers - 1],
