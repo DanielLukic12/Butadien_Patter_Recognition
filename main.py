@@ -190,7 +190,6 @@ with tf.Session() as sess:
         shuffle_order = list(range(input_data.shape[0]))
         random.shuffle(shuffle_order)
 
-#        training_input = training_input[:, shuffle_order]
         training_input = training_input[shuffle_ind, :]
         training_target = training_target[shuffle_ind]
 
